@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "PassMess";
+}
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        /* background: white; */
+        background-image: url('https://t3.ftcdn.net/jpg/04/99/56/30/240_F_499563059_GGQxzylCFmlUlL1jr5rVrbYE9yk9vkmp.jpg');
+        background-size: cover;
+        border: 1px solid#ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+
+    .container {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+
+    h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+        clear: both;
+    }
+
+</style>
+
+<header>
+    <h1>Password Confirmation</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02qPnvJZZtWoCfpC1S7quJUEsSJxehJQmOQ&s" alt="logo" width="100" height="100" />
+</header>
+<body>
+    <div class="container">
+<p>
+    An email has been sent to your registered email address. Please check your inbox (and spam/junk folder) for a confirmation email.
+</p>
+<p>
+    Click the link in the email to confirm your email address and complete the registration process.
+</p>
+<p>
+    Click the link below to go to login page!
+    <br />
+    <a asp-action="Login" asp-controller="User">Login</a>
+</p>
+
+<p>
+    Click the link below if you did not get email!
+    <br />
+    <a asp-action="ResendEmail" asp-controller="User">Resend Email</a>
+</p>
+</div>
+</body>

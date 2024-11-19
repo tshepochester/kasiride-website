@@ -1,0 +1,215 @@
+﻿@using BackendlessAPI;
+@model KASY_RIDES.Models.Users
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+
+    h1 {
+        margin-bottom: 2px;
+    }
+
+    h4 {
+        margin-bottom: 2px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        /* background: white; */
+        background-image: url('https://t3.ftcdn.net/jpg/04/99/56/30/240_F_499563059_GGQxzylCFmlUlL1jr5rVrbYE9yk9vkmp.jpg');
+        background-size: cover;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[text="objectId"], input[type="email"], input[type="password"] {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    select {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+        clear: both;
+    }
+</style>
+
+@{
+    if (Backendless.UserService.IsValidLogin() == false)
+    {
+        <header>
+            <h1>Register</h1>
+            <h4>Fill all required fields indicated by "*" </h4>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02qPnvJZZtWoCfpC1S7quJUEsSJxehJQmOQ&s" alt="logo" width="100" height="100" />
+        </header>
+
+    }
+    else
+    {
+        <h1>Add User</h1>
+    }
+}
+
+<hr />
+<body>
+    <div class="container">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="objectId" class="control-label"></label>
+                <input asp-for="objectId" class="form-control" />
+                <span asp-validation-for="objectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <!-- Dropdown for Role -->
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                <select asp-for="Role" class="form-control" id="roleDropdown">
+                    <option value="Admin">Admin</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Passenger">Passenger</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+
+            <!-- Vehicle details, shown only for Driver role -->
+            <div id="vehicleDetails" style="display:none;">
+                <div class="form-group">
+                    <label asp-for="VehicleId" class="control-label"></label>
+                    <input asp-for="VehicleId" class="form-control" />
+                    <span asp-validation-for="VehicleId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VehicleModel" class="control-label"></label>
+                    <input asp-for="VehicleModel" class="form-control" />
+                    <span asp-validation-for="VehicleModel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VehicleDisc" class="control-label"></label>
+                    <input asp-for="VehicleDisc" class="form-control" />
+                    <span asp-validation-for="VehicleDisc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LicenseNumber" class="control-label"></label>
+                    <input asp-for="LicenseNumber" class="form-control" />
+                    <span asp-validation-for="LicenseNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+            @if(Backendless.UserService.IsValidLogin() == true)
+            {
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
+            }
+        </form>
+    </div>
+</div>
+<br />
+@if(Backendless.UserService.IsValidLogin() == false)
+{
+    <div>
+        Click the button below to Login
+        <br />
+        <a asp-action="Login" asp-controller="User">Login</a>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        document.getElementById('roleDropdown').addEventListener('change', function () {
+            var vehicleDetails = document.getElementById('vehicleDetails');
+            if (this.value === 'Driver') {
+                vehicleDetails.style.display = 'block';
+            } else {
+                vehicleDetails.style.display = 'none';
+            }
+        });
+    </script>
+}
+</div>
+</body>

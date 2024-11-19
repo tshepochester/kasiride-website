@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewData["Title"] = "FAQ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\mautj\Desktop\LABORATORY\Website\Sample5\Kasy Rides\wwwroot\css\styles\faq.css">
+    <title>Ride FAQ</title>
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            /* background: white; */
+            background-image: url('https://t3.ftcdn.net/jpg/04/99/56/30/240_F_499563059_GGQxzylCFmlUlL1jr5rVrbYE9yk9vkmp.jpg');
+            background-size: cover;
+            border: 1px solid#ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        dl {
+            padding: 0;
+            margin: 0;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        dd {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+            dd::before {
+                content: "\2022";
+                font-weight: bold;
+                font-size: 1.5em;
+                color: #4CAF50;
+                margin-right: 10px;
+            }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Ride FAQ</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02qPnvJZZtWoCfpC1S7quJUEsSJxehJQmOQ&s" alt="logo" width="100" height="100" />
+    </header>
+    <div class="container">
+        <div class="faq-section">
+            <h2>booking and Cancellation</h2>
+            <dl>
+                <dt>How do I book a ride?</dt>
+                <dd>To book a ride, simply click on the "Book Now" Button and fill out the booking form.</dd>
+                <dt>Can I cancel my ride?</dt>
+                <dd>Yes, you can cancel your ride up to 2 hours before the scheduled pickup time.</dd>
+            </dl>
+        </div>
+        <br />
+        <div class="faq-section">
+            <h2>Payment and Pricing</h2>
+            <dl>
+                <dt>How much does a ride cost?</dt>
+                <dd>The cost of a ride varies depending on the distance and type of vehicle.</dd>
+                <dt>What payment methods do you accept?</dt>
+                <dd>We accept credit cards, PayPal, and cash.</dd>
+            </dl>
+        </div>
+        <br />
+        <div class="faq-section">
+            <h2>Ride Details</h2>
+            <dl>
+                <dt>What types of vehicles do you offer?</dt>
+                <dd>We offer Taxi, 4 Seater, 7 Seater, Mini Bus, Sedan, SUV</dd>
+                <dt>Can  request a specific driver?</dt>
+                <dd>Yes, you can request a specific driver, but it's subject to availability.</dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

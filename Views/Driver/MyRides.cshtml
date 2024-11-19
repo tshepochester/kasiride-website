@@ -1,0 +1,119 @@
+﻿@model IEnumerable<KASY_RIDES.Models.Rides>
+
+@{
+    ViewData["Title"] = "MyRides";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        text-align: center;
+    }
+
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: auto;
+        margin: 40px auto;
+        padding: 50px 20px;
+        /* background: white; */
+        background-image: url('https://t3.ftcdn.net/jpg/04/99/56/30/240_F_499563059_GGQxzylCFmlUlL1jr5rVrbYE9yk9vkmp.jpg');
+        background-size: cover;
+        border: 1px solid#ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+        clear: both;
+    }
+</style>
+
+<header>
+    <h1>MyRides</h1>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02qPnvJZZtWoCfpC1S7quJUEsSJxehJQmOQ&s" alt="logo" width="100" height="100" />
+</header>
+<body>
+    <div class="container">
+
+        <h4>Here is a list of all rides You accepted!!!</h4>
+
+<p>
+    <a asp-action="Rides">Available Rides</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RideId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DriverId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassengerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RideId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassengerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</body>

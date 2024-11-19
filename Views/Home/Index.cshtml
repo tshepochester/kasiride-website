@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Kasy Ride</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px 20px;
+            /* background: white; */
+            background-image: url('https://t3.ftcdn.net/jpg/04/99/56/30/240_F_499563059_GGQxzylCFmlUlL1jr5rVrbYE9yk9vkmp.jpg');
+            background-size: cover;
+            border: 1px solid#ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .feature {
+            width: 30%;
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .feature h3 {
+                margin-top: 10px;
+                color: #0077cc;
+            }
+
+        .cta-buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+            .cta-buttons a {
+                padding: 12px 20px;
+                margin: 10px;
+                background-color: #0077cc;
+                color: white;
+                text-decoration: none;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+
+                .cta-buttons a:hover {
+                    background-color: #005fa3;
+                }
+
+       
+    </style>
+</head>
+<body>
+            <header>
+                <h1>Welcome to Your Kasy Ride</h1>
+                <p>Your Ride, Your Way.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02qPnvJZZtWoCfpC1S7quJUEsSJxehJQmOQ&s" alt="logo" width="100" height="100" />
+            </header>
+
+    <div class="container">
+        <section>
+            <h2>Get Where You Need to Be – Fast, Safe, and Reliable</h2>
+            <p>Whether it's a quick trip across town or a long journey ahead, we're here to make sure your ride is as smooth and comfortable as possible.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Affordable Rates</h3>
+                <p>Transparent pricing with no hidden fees. Pay only what you see.</p>
+            </div>
+            <div class="feature">
+                <h3>Fast & Reliable</h3>
+                <p>Get a ride in minutes, with drivers nearby and real-time tracking.</p>
+            </div>
+            <div class="feature">
+                <h3>Safe & Secure</h3>
+                <p>Track your ride and share your journey with loved ones for added security.</p>
+            </div>
+        </section>
+
+        <section class="cta-buttons">
+            <h2>Ready to Ride?</h2>
+            <p>Choose your ride and start your journey with just a few taps.</p>
+            <a href="#">Download for iOS</a>
+            <a href="#">Download for Android</a>
+        </section>
+    </div>
+
+</body>
+</html>
